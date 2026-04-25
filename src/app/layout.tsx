@@ -6,6 +6,7 @@ import { I18nProvider } from "@/context/I18nContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aihomes.vimgroup.vn"),
   title: "AI Homes - Thiết kế & Thi công Nội thất Cao cấp",
   description: "Kiến tạo không gian sống thông minh, hiện đại cùng công nghệ AI. Thương hiệu nội thất uy tín thuộc VIMGROUP.",
   keywords: "thiết kế nội thất, thi công nội thất, AI Homes, VIMGROUP, nội thất cao cấp",
@@ -15,11 +16,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Homes - Thiết kế & Thi công Nội thất Cao cấp",
     description: "Kiến tạo không gian sống thông minh, hiện đại cùng công nghệ AI. Thương hiệu nội thất uy tín thuộc VIMGROUP.",
-    url: "https://aihomes-vimgroup.vercel.app",
+    url: "https://aihomes.vimgroup.vn",
     siteName: "AI Homes",
     images: [
       {
-        url: "https://aihomes-vimgroup.vercel.app/images/og-banner.png",
+        url: "/images/og-banner.png",
         width: 1200,
         height: 630,
         alt: "AI Homes Banner",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Homes - Thiết kế & Thi công Nội thất Cao cấp",
     description: "Kiến tạo không gian sống thông minh, hiện đại cùng công nghệ AI. Thương hiệu nội thất uy tín thuộc VIMGROUP.",
-    images: ["https://aihomes-vimgroup.vercel.app/images/og-banner.png"],
+    images: ["/images/og-banner.png"],
   },
 };
 

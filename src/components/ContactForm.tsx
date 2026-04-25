@@ -102,7 +102,7 @@ export default function ContactForm() {
                     <option value={t("opt_showroom")}>{t("opt_showroom")}</option>
                   </select>
                 </div>
-                <button type="submit" disabled={loading} className="w-full bg-[#ff5a1f] hover:bg-[#e0450b] text-white font-bold py-4 rounded-lg transition-colors flex items-center justify-center">
+                <button type="submit" disabled={loading} className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-slate-900 font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg shadow-yellow-500/20 flex items-center justify-center">
                   {loading ? t("form_sending") : t("form_cta")}
                 </button>
               </form>

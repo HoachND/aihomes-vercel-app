@@ -11,9 +11,9 @@ export default function Hero() {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/aihome_6.png')" }}
+        style={{ backgroundImage: "url('/images/background-aihomes.png')" }}
       >
-        <div className="absolute inset-0 bg-[#0f172a]/80"></div>
+        <div className="absolute inset-0 bg-[#0f172a]/70"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16">
@@ -25,10 +25,21 @@ export default function Hero() {
           <span className="inline-block py-1 px-3 rounded-full bg-yellow-500/20 text-yellow-400 font-semibold tracking-wider text-sm mb-6 border border-yellow-500/30">
             {t("hero_promo")}
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-            {t("hero_title").split(' SANG TRỌNG').map((text, i) => (
-              i === 0 ? <span key={i}>{text}<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"> SANG TRỌNG</span></span> : text
-            ))}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
+            {(() => {
+              const title = t("hero_title");
+              if (title.includes("SANG TRỌNG")) {
+                const parts = title.split("SANG TRỌNG");
+                return (
+                  <>
+                    {parts[0]}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">SANG TRỌNG</span>
+                    {parts[1]}
+                  </>
+                );
+              }
+              return title;
+            })()}
           </h1>
           <p className="mt-4 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
             {t("hero_subtitle")}

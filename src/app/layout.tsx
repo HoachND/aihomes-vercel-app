@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "AI Homes",
     images: [
       {
-        url: "/images/background-aihomes.png",
+        url: "https://aihomes-vimgroup.vercel.app/images/aihomes.jpg",
         width: 1200,
         height: 630,
         alt: "AI Homes Banner",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Homes - Thiết kế & Thi công Nội thất Cao cấp",
     description: "Kiến tạo không gian sống thông minh, hiện đại cùng công nghệ AI. Thương hiệu nội thất uy tín thuộc VIMGROUP.",
-    images: ["/images/background-aihomes.png"],
+    images: ["https://aihomes-vimgroup.vercel.app/images/aihomes.jpg"],
   },
 };
 

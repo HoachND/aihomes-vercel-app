@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Chatbot from "../components/Chatbot";
 import { I18nProvider } from "@/context/I18nContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-slate-50 text-slate-900`} suppressHydrationWarning>
         <I18nProvider>
           {children}
+          <Chatbot />
         </I18nProvider>
       </body>
     </html>

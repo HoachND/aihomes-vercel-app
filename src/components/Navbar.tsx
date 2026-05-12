@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: t("nav_ceo"), href: "#ceo" },
     { name: t("nav_commit"), href: "#commitment" },
     { name: t("nav_projects"), href: "#projects" },
+    { name: "Blog", href: "/blog" },
     { name: t("nav_contact"), href: "#get-quote" },
   ];
 

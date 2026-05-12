@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
           ...data,
-          source: "Form Nhận Báo Giá - aihomes.vercel.app"
+          source: "aihomes.vimgroup.vn - AI Homes"
         }),
       });
     } catch (gasError) {

@@ -40,7 +40,6 @@ function writePosts(posts: BlogPost[]) {
   fs.writeFileSync(DATA_FILE, JSON.stringify(posts, null, 2), "utf-8");
 }
 
-// GET: List all posts (public) or all posts (admin)
 export async function GET(req: NextRequest) {
   const posts = readPosts();
   const isAdmin = req.nextUrl.searchParams.get("admin") === "true";
@@ -48,7 +47,6 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(filtered.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()));
 }
 
-// POST: Create new post
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const posts = readPosts();
@@ -62,7 +60,7 @@ export async function POST(req: NextRequest) {
     excerptEn: body.excerptEn || "",
     contentVi: body.contentVi || "",
     contentEn: body.contentEn || "",
-    category: body.category || "general",
+    category: body.category || "Smart Home",
     seoTitle: body.seoTitle || body.titleEn || body.titleVi,
     seoDescription: body.seoDescription || body.excerptEn || body.excerptVi,
     seoImage: body.seoImage || "",
@@ -77,7 +75,6 @@ export async function POST(req: NextRequest) {
   return NextResponse.json(newPost, { status: 201 });
 }
 
-// PUT: Update post
 export async function PUT(req: NextRequest) {
   const body = await req.json();
   const posts = readPosts();
@@ -88,7 +85,6 @@ export async function PUT(req: NextRequest) {
   return NextResponse.json(posts[idx]);
 }
 
-// DELETE: Delete post
 export async function DELETE(req: NextRequest) {
   const id = req.nextUrl.searchParams.get("id");
   if (!id) return NextResponse.json({ error: "Missing id" }, { status: 400 });

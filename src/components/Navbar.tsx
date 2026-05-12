@@ -14,22 +14,22 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: t("nav_home"), href: "#home" },
-    { name: t("nav_about"), href: "#about" },
-    { name: t("nav_ceo"), href: "#ceo" },
-    { name: t("nav_commit"), href: "#commitment" },
-    { name: t("nav_projects"), href: "#projects" },
+    { name: t("nav_home"), href: "/#home" },
+    { name: t("nav_about"), href: "/#about" },
+    { name: t("nav_ceo"), href: "/#ceo" },
+    { name: t("nav_commit"), href: "/#commitment" },
+    { name: t("nav_projects"), href: "/#projects" },
     { name: "Blog", href: "/blog" },
-    { name: t("nav_contact"), href: "#get-quote" },
+    { name: t("nav_contact"), href: "/#get-quote" },
   ];
 
   return (
     <nav className="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-yellow-600/20 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-48 md:h-[220px]">
+        <div className="flex justify-between items-center h-20 md:h-28">
           <div className="flex-shrink-0 flex items-center">
-            <a href="#home" className="hover:opacity-80 transition-opacity">
-              <Image src="/images/logo-aihomes.png" alt="AI Homes" width={1200} height={400} className="h-32 md:h-[180px] w-auto object-contain scale-150 transform origin-left" priority />
+            <a href="/#home" className="hover:opacity-80 transition-opacity">
+              <Image src="/images/logo-aihomes.png" alt="AI Homes" width={400} height={150} className="h-20 md:h-28 w-auto object-contain scale-110 origin-left" priority />
             </a>
           </div>
           <div className="hidden md:flex items-center space-x-8">

@@ -13,8 +13,9 @@ function getPost(slug: string): BlogPost | undefined {
   return posts.find((p) => p.slug === slug);
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getPost(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = getPost(resolvedParams.slug);
   if (!post) return { title: "Not Found" };
 
   return {
@@ -37,12 +38,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  const post = getPost(params.slug);
+export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const post = getPost(resolvedParams.slug);
   if (!post) return <div>Post not found</div>;
 
   return (
-    <I18nProvider>
+    <>
       <BlogDetailContent post={post} />
       
       {/* Schema Markup for Google - Expert level SEO */}
@@ -71,6 +73,6 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
           })
         }}
       />
-    </I18nProvider>
+    </>
   );
 }
